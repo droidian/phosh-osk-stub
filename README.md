@@ -4,6 +4,7 @@ An experimental keyboard for quick prototyping and to debug input related
 issues in phosh. For a production ready on-screen keyboard see [squeekboard][].
 
 The purpose of phosh-osk-stub:
+
 - allow experimentation without the risk of breaking end user systems
 - be helpful when debugging input-method related issues
 - be quick and easy to (cross)compile
@@ -11,6 +12,7 @@ The purpose of phosh-osk-stub:
   desired (hence provide API documentation)
 
 Features:
+
 - easy to swap out with squeekboard (implements phosh's [sm.puri.OSK0]() DBus
   interface) for low risk experimentation
 - easy to temporarily replace running instance (`--replace` option)
@@ -42,6 +44,7 @@ cd phosh-osk-stub
 The [main][] branch has the current development version.
 
 ## Dependencies
+
 On a Debian based system run
 
 ```sh
@@ -66,7 +69,9 @@ meson test -C _build
 We're disabling the doc build above as it reduces build time a lot.
 
 ## Running
+
 ### Running from the source tree
+
 When running from the source tree first start *[phosh][]*.
 Then start *phosh-osk-stub* using:
 
@@ -85,6 +90,7 @@ The result should look something like this:
 ![inscript/malayalam](screenshots/pos-wide-in+mal.png)
 
 ## Word completion
+
 ``phosh-osk-stub`` has support for word completion. There are different
 completers built in and it's easy to add more. See the [manpage][] on
 available completers and how to configure them.
@@ -93,11 +99,13 @@ available completers and how to configure them.
 
 ### Development Documentation
 
-The API documentation is available at https://guidog.pages.gitlab.gnome.org/phosh-osk-stub .
+The API documentation is available at
+<https://guidog.pages.gitlab.gnome.org/phosh-osk-stub>.
 
 ### End User Documentation
 
-For end user documentation see the [manpage][] (or in the installed system via `man phosh-osk-stub`).
+For end user documentation see the [manpage][] (or in the installed
+system via `man phosh-osk-stub`).
 
 [main]: https://gitlab.gnome.org/guidog/phosh-osk-stub/-/tree/main
 [.gitlab-ci.yml]: https://gitlab.gnome.org/guidog/phosh-osk-stub/-/blob/main/.gitlab-ci.yml

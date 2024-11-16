@@ -9,6 +9,8 @@ vgdump
 .\#*
 .vscode/
 *.gcov
+po/missing
+po/phosh-osk-stub.pot
 debian/files
 debian/*.substvars
 debian/*debhelper*

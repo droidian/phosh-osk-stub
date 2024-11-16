@@ -1,3 +1,23 @@
+phosh-osk-stub 0.43.0
+---------------------
+Released November 2024
+* Add <ctrl> and <alt> modifiers and <menu> key to the shortcuts bar
+* Support accent colors
+* Better handle overlapping key presses to ease fast typing
+* Make lower- and upper-case view of terminal layout more consistent
+* presage: Don't set abbrev predictor as it adds random unicode chars
+* Ship completer descriptions so mobile settings knows about them
+* User documentation updates
+* Various bug fixes
+* Issues fixed:
+    * https://gitlab.gnome.org/guidog/phosh-osk-stub/-/issues/44
+    * https://gitlab.gnome.org/guidog/phosh-osk-stub/-/issues/41
+    * https://gitlab.gnome.org/guidog/phosh-osk-stub/-/issues/49
+* Contributors:
+    * Guido Günther
+    * Julian
+    * MoonlightWave-12
+
 phosh-osk-stub 0.42.0
 ---------------------
 Released September 2024

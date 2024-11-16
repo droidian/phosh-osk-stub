@@ -35,6 +35,7 @@ pos_init (void)
   static gsize initialized = FALSE;
 
   if (g_once_init_enter (&initialized)) {
+    textdomain (GETTEXT_PACKAGE);
     bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
     bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
 

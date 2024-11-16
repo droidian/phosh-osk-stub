@@ -1,5 +1,6 @@
 Building
 ========
+
 For build instructions see the README.md. For coding style,
 conventions, etc. check phosh's [HACKING.md].
 

@@ -355,6 +355,9 @@ pos_input_surface_submit_current_preedit (PosInputSurface *self)
     return;
 
   preedit = g_strdup (pos_completer_get_preedit (self->completer));
+  if (gm_str_is_null_or_empty (preedit))
+    return;
+
   g_debug ("%s: Submitting %s", __func__, preedit);
   pos_completer_set_preedit (self->completer, NULL);
   pos_input_method_send_preedit (self->input_method, "", 0, 0, FALSE);

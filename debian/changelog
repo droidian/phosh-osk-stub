@@ -1,3 +1,103 @@
+phosh-osk-stub (0.43.0) experimental; urgency=medium
+
+  * metainfo: Don't mark release notes as translatable. No need to put
+    translator effort into these
+  * po: Remove generated pot file.
+  * po: Fix path to completer files.
+    We use a .desktop extension so they get picked up by
+    gettext properly.
+  * po: Mark pos-input-surface as translatable
+  * ci: Check po. Make sure we don't forget any translatable files again
+  * docs: Cleanup markdown
+  * ci: Lint markdown
+  * main: Set text domain so translations get picked up
+
+ -- Guido Günther <agx@sigxcpu.org>  Thu, 14 Nov 2024 13:23:59 +0100
+
+phosh-osk-stub (0.43~rc1) experimental; urgency=medium
+
+  [ Guido Günther ]
+  * css: Drop superfluous semicolon
+  * debug-widget: Drop ui. Fixes bdaf2f8ab ("debug-widget: Drop it")
+  * presage: Always set predictors.
+    This ensures we don't have unwanted predictors like the abbreviation
+    predictor in there that currently doesn't work as intended as it adds
+    unwanted tab characters.
+  * packaging: No need to link abbreviations. We're not using them anymore
+  * build: Drop icon theme update. We don't install icons
+  * dbus: Update OSK0 protocol from phosh. Let's use the canonical version
+  * build: Install completer descriptions.
+    We only install descriptions of completers found at build time.
+  * packaging: Install completer data
+  * doc: Document swipeGuess use
+  * ci: Update shared scripts to 5e3667e
+  * ci: Use common style check
+  * ci: Update ci-fairy check
+  * ci: Use update image.
+    Update to Debian Trixie as of 2024-10-21
+  * shortcuts-bar: Use correct return type. We return a pointer so use `NULL`.
+  * input-surface: Drop unused clipboard-copy
+  * shortcuts-bar: Allow to add `<ctrl>` and `<alt>`
+    They're tracked as toggle buttons that latch until the next character
+    is entered.
+  * vk-driver: Helper to convert bitween modifier flags. We want to
+    convert from Gdk to our internal ones.
+  * input-surface: Track latched modifiers.
+    Currently then can only come form the shortcuts bar (thus affect the
+    terminal layout).
+  * schema: Add alt and ctrl to shortcuts bar
+  * doc: Document latched modifiers in the shortcuts bar
+  * css: Use current adwait's background color.
+    Makes the OSK look more integrated
+  * treewide: Move resources to mobi.phosh
+  * build: Depend on recent schema. Needed for accent colors
+  * style-manager: Add class from phosh. Copy from phosh's
+      64035d6f5 ("Merge branch 'for-upstream/phosh/accent-colours' into 'main'")
+  * style-manager: Adjust gresource path and prefix
+  * css: Override GTK defaults for menu buttons.
+    This gives us proper styling with accent colors
+  * input-method: Use style manager.
+    This gives us accent color support and frees PosInputSurface
+    from style handling.
+  * emoji-picker: Place section at the right edge in RTL locales.
+    Helps: https://gitlab.gnome.org/guidog/phosh-osk-stub/-/issues/44
+  * emoji-picker: Select correct section in RTL locales.
+    When scrolling in RTL locales we bring in the new section from the
+    right. Take that into account when highlighting the currently active
+    section.
+    Closes: https://gitlab.gnome.org/guidog/phosh-osk-stub/-/issues/44
+  * osk-widget: Move key press logic to separate function.
+    We'll use that for touch event handling
+  * osk-widget: Make key_release_action symmetric to key_press_action
+    key_press_actions sets `self->current` so `self->current` should
+    be unset in `key_release_action`.
+  * osk-widget: Handle touch events.
+    This allows us to process overlapping key presses by looking at the
+    individual touch events rather than handling them as button presses.
+    Closes: https://gitlab.gnome.org/guidog/phosh-osk-stub/-/issues/41
+  * input-surface: Don't submit empty preedit.
+    This needlessly clears selected text and is similar
+    to https://gitlab.gnome.org/World/Phosh/phoc/-/merge_requests/592
+    Fixes f8edcb646 ("input-surface: Submit preedit on layout changes to emoji or terminal")
+    Closes: https://gitlab.gnome.org/guidog/phosh-osk-stub/-/issues/49
+
+  [ Julian ]
+  * shortcuts-bar: Add shortcut for Menu
+
+  [ MoonlightWave-12 ]
+  * layouts/terminal: Fix indentation
+  * layouts/terminal: Add `,`-button to the upper-case-view
+    to reduce unnecessary layout-changes,
+    when switching the view with the Shift-button.
+    The `,`-button is already there in the lower-case-view.
+  * layouts/terminal: Move `/` to the popover of the `,`-button
+    where `|` is available, so that similar symbols are in the same popover.
+  * layouts/terminal: Add `\` to the popover of the `,`-button
+    where `/` is available, so that similar symbols are in the same popover.
+  * layouts/terminal: Add `&` to the popover of the `,`-button
+
+ -- Guido Günther <agx@sigxcpu.org>  Sat, 09 Nov 2024 08:18:21 +0100
+
 phosh-osk-stub (0.42.0) experimental; urgency=medium
 
   * layout-info: Ensure stable sorting.
